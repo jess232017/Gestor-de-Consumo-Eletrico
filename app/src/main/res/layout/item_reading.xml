@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:clipChildren="true"
+    android:foreground="@drawable/ripple_transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5.0">
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.0"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="@color/ColorPrimaryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:text="@string/lectura"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:textColor="@color/ColorSecondaryText"
+                android:id="@+id/txtFechaLectura"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Fecha de 07-28-2021 09:22"
+                android:textSize="12.0sp"
+                android:textStyle="normal"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtConsumoLeido"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2.0"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="end|center"
+            tools:text="125 kWh"
+            android:textColor="@color/ColorPrimaryText"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/border_top_bottom_gray"
+            android:orientation="horizontal"
+            android:paddingTop="15.0dip"
+            android:paddingBottom="15.0dip"
+            android:weightSum="10.0"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_width="0.0dip"
+                android:layout_weight="5.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <View
+                        android:layout_width="5.0dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/Primarydrop"
+                        android:layout_marginEnd="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/ColorSecondaryText"
+                            android:text="@string/lectura_anterior_kwh"
+                            android:textSize="12.0sp"
+                            android:textStyle="normal"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:id="@+id/TxtConsumoInicial"
+                            android:layout_width="match_parent"
+                            android:textColor="@color/ColorPrimaryText"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            tools:text="14107 kWh"
+                            android:textSize="16.0sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <View
+                        android:layout_width="5.0dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/Primarydrop"
+                        android:layout_marginEnd="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/ColorSecondaryText"
+                            android:text="@string/lectura_actual_kwh"
+                            android:textSize="12.0sp"
+                            android:textStyle="normal"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:id="@+id/TxtConsumoActual"
+                            android:layout_width="match_parent"
+                            android:textColor="@color/ColorPrimaryText"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            tools:text="14107 kWh"
+                            android:textSize="16.0sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0.0dip"
+                android:layout_weight="5.0"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <View
+                        android:layout_width="5.0dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/Primarydrop"
+                        android:layout_marginEnd="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/ColorSecondaryText"
+                            android:text="@string/promedio_kwh_dia"
+                            android:textSize="12.0sp"
+                            android:textStyle="normal"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:id="@+id/txtConsumoPerDia"
+                            android:textColor="@color/ColorPrimaryText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            tools:text="14107 kWh"
+                            android:textSize="16.0sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <View
+                        android:layout_width="5.0dip"
+                        android:layout_height="match_parent"
+                        android:background="@color/Primarydrop"
+                        android:layout_marginEnd="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:paddingTop="2dp"
+                            android:paddingBottom="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:textColor="@color/ColorSecondaryText"
+                            android:maxLines="1"
+                            android:text="@string/final_promedio"
+                            android:textSize="12.0sp"
+                            android:textStyle="normal"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:id="@+id/txtConsumoPromedio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/ColorPrimaryText"
+                            android:gravity="start"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            tools:text="14107 kWh"
+                            android:textSize="16.0sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

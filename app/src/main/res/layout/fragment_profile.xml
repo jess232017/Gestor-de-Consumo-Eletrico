@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contentBodyColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            style="@style/viewParent.headerText"
+            android:text="@string/configuraci_n" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCircleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/colorPrimary"
+                android:src="@drawable/ic_baseline_person_24"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/usernameTextView"
+                style="@style/viewParent.headerText"
+                tools:text="Jesus Hernandez"
+                android:textSize="18sp"
+                android:layout_toEndOf="@id/profileCircleImageView"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                style="@style/viewParent.headerText"
+                android:text="@string/editar_detalles_personales"
+                android:textSize="16sp"
+                android:textColor="#5D5C5C"
+                android:layout_below="@id/usernameTextView"
+                android:layout_toEndOf="@id/profileCircleImageView"/>
+
+            <ImageView
+                style="@style/viewParent"
+                android:src="@drawable/ic_more"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/todo" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/darkModeSwitch"
+            style="@style/settingsText"
+            android:drawableStart="@drawable/ic_dark_mode"
+            android:text="@string/modo_obscuro"/>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/perfil"/>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:text="@string/editar_perfil"
+            app:drawableLeftCompat="@drawable/ic_edit_profile" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_marginTop="10dp"
+            android:text="@string/cambiar_contrasena"
+            app:drawableStartCompat="@drawable/ic_edit_password" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/notificaciones"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            style="@style/settingsText"
+            android:checked="true"
+            android:drawableStart="@drawable/ic_notifications"
+            android:text="@string/notificaciones"/>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/regional"/>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:text="@string/Lenguaje"
+            app:drawableStartCompat="@drawable/ic_languages" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:text="@string/salir"
+            app:drawableStartCompat="@drawable/ic_logout" />
+
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="App ver 2.0.1"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</ScrollView>
+<!--
+<?xml version="1.0" encoding="utf-8" ?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="146dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:contentScrim="?colorPrimary"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:fontFamily="@font/poppins"
+                android:layout_width="fill_parent"
+                android:layout_height="?actionBarSize"
+                app:contentInsetStartWithNavigation="0.0dip"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="Jesus Hernandez" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_10"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:cardCornerRadius="0.0dip"
+                app:cardElevation="1.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:padding="16.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perfil_usuario"
+                        android:textSize="16.0sp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/ColorPrimaryVariantText"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14.0dip"
+                        android:weightSum="2.0">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/tarifa"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtTarifa"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="end"
+                            tools:text="\ 987654210" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="14.0dip"
+                        android:paddingEnd="14.0dip"
+                        android:weightSum="2.0">
+
+                        <TextView
+                            android:gravity="start|center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/alumbrado_publico"
+                            android:textColor="@android:color/black" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchAP"
+                            android:layout_weight="1.0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:checked="false"
+                            app:switchPadding="@dimen/spacing_large"
+                            app:thumbTint="@color/switch_color_primary" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14.0dip"
+                        android:weightSum="2.0">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/departamento"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtDepartamento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="end"
+                            tools:text="\ 987654210" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14.0dip"
+                        android:weightSum="2.0">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/municipio"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtMunicipio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="end"
+                            tools:text="\ 987654210" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_middle" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:cardCornerRadius="0.0dip"
+                app:cardElevation="1.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:padding="16.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/configuracion"
+                        android:textSize="16.0sp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/ColorPrimaryVariantText"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <TextView
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="14.0dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/privacidad_y_seguridad"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <TextView
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="14.0dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/almacenamiento_e_informacion"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14.0dip"
+                        android:weightSum="2.0">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/Tema"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtTema"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="end"
+                            android:text="Defecto" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="14.0dip"
+                        android:weightSum="2.0">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/Lenguaje"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtIdioma"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins"
+                            android:gravity="end"
+                            android:text="Español" />
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_middle" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:cardCornerRadius="0.0dip"
+                app:cardElevation="1.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="55dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/spacing_large"
+                            android:layout_height="0.0dip" />
+
+                        <TextView
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.0"
+                            android:text="@string/soporte"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                            android:textColor="@color/ColorPrimaryVariantText"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="14.0dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/preguntame"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <TextView
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="14.0dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/FAQ"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <TextView
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="14.0dip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/politica_privacidad"
+                        android:textColor="@android:color/black" />
+
+                    <View
+                        android:background="@color/light200"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_middle" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_middle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/version_actual"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/grey_40" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/spacing_middle" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_mlarge"
+        android:clickable="true"
+        app:tint="@color/grey_40"
+        app:backgroundTint="@android:color/white"
+        app:elevation="1.0dip"
+        app:fabSize="normal"
+        app:layout_anchor="@+id/app_bar_layout"
+        app:layout_anchorGravity="end|bottom|center"
+        app:srcCompat="@drawable/ic_baseline_photo_camera_24"
+        android:focusable="true"
+        android:contentDescription="@string/todo" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

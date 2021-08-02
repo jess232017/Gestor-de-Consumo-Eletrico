@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:background="@drawable/blue_bg">
+
+        <ImageView
+            android:layout_width="77dp"
+            android:layout_height="77dp"
+            android:layout_marginTop="93dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="@string/todo" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:scrollingCache="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginTop="36.7dp"
+                app:startIconDrawable="@drawable/ic_baseline_person_24"
+                app:errorTextAppearance="@style/error_appearance"
+                app:startIconTint="@color/colorPrimary"
+                android:hint="@string/nombre"
+                app:fontFamily="@font/poppins"
+                app:errorEnabled="true"
+                android:id="@+id/lytNombre">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14.0sp"
+                    android:inputType="textPersonName"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginTop="12.7dp"
+                android:hint="@string/tarifa"
+                app:startIconTint="@color/colorPrimary"
+                app:startIconDrawable="@drawable/ic_baseline_merge_type_24"
+                app:errorEnabled="true"
+                android:id="@+id/lytTarifa">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/txtTarifa"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:textSize="14.0sp"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginTop="12.7dp"
+                android:hint="@string/departamento"
+                app:startIconTint="@color/colorPrimary"
+                app:startIconDrawable="@drawable/ic_baseline_location_city_24"
+                app:errorEnabled="true"
+                android:id="@+id/lytDepartamento">
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/txtDepartamento"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:textSize="14.0sp"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginTop="12.7dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lytMunicipio"
+                    android:hint="@string/municipio"
+                    app:startIconTint="@color/colorPrimary"
+                    app:startIconDrawable="@drawable/ic_baseline_reduce_capacity_24">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/txtMunicipio"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="14.0sp"
+                        android:inputType="none"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/cpiMunicipio"
+                    android:visibility="gone"
+                    android:background="@color/cardview_light_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    app:indicatorSize="22dp"/>
+            </RelativeLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchAP"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginStart="72dp"
+                android:layout_marginEnd="62dp"
+                android:textSize="14.0sp"
+                android:layout_marginTop="12.7dp"
+                android:drawablePadding="16dp"
+                android:drawableStart="@drawable/ic_baseline_wb_iridescent_24"
+                android:drawableTint="@color/colorPrimary"
+                android:text="@string/alumbrado_publico"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/BtnConfirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_corner5"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="@string/registrar_profile"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="62dp"
+                android:layout_marginRight="62dp"
+                android:layout_marginTop="12.7dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

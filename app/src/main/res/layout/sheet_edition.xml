@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16.0dip"
+    android:paddingEnd="16.0dip"
+    app:behavior_peekHeight="56.0dip"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:weightSum="1.0">
+
+        <View
+            android:layout_width="50.0dip"
+            android:layout_height="4.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8.0dip"
+            android:background="@drawable/btn_corner6"
+            android:backgroundTint="@color/light200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8.0dip"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="4.0dip"
+            android:text="¿QUE ACCIÓN DESEA REALIZAR?"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="99dp"
+        android:orientation="horizontal"
+        android:padding="15.0dip">
+
+
+        <LinearLayout
+            android:id="@+id/btnVer"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:foreground="@drawable/ripple_transparent">
+
+            <ImageView
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_read_more_24"
+                app:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/ver_mas"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnEditar"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:foreground="@drawable/ripple_transparent">
+
+            <ImageView
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Editar"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnBorrar"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:foreground="@drawable/ripple_transparent">
+
+            <ImageView
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_delete_forever_24"
+                app:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Borrar"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnAgregar"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:foreground="@drawable/ripple_transparent">
+
+            <ImageView
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_playlist_add_24"
+                app:tint="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Lectura"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
