@@ -14,6 +14,7 @@ import com.alksoft.controldeconsumoelectrico.data.local.entity.Profile;
 import com.alksoft.controldeconsumoelectrico.data.remote.RetrofitApi;
 import com.alksoft.controldeconsumoelectrico.databinding.DialogInsertRegisterBinding;
 import com.alksoft.controldeconsumoelectrico.utils.Alertar;
+import com.alksoft.controldeconsumoelectrico.utils.PrefManager;
 import com.alksoft.controldeconsumoelectrico.vm.ProfileViewModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -22,25 +23,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public class InsertRegisterDialog extends BottomSheetDialog {
-    private static InsertRegisterDialog instance;
-
     private DialogInsertRegisterBinding view;
-    private ProfileViewModel mProfileViewModel;
     private OptionRepository optionRepository;
     private int indexDepartment = -1;
     private int indexMunicipio = -1;
     private int indexTarifa = -1;
+    private Profile profile;
     private final Context ctx;
 
-    public static InsertRegisterDialog getInstance(Context context) {
-        if (instance == null) {
-            instance = new InsertRegisterDialog(context);
-        }
-
-        return instance;
-    }
-
-    private InsertRegisterDialog(@NonNull @NotNull Context context) {
+    public InsertRegisterDialog(@NonNull @NotNull Context context) {
         super(context);
         optionRepository = new OptionRepository(context);
         ctx = context;
@@ -86,6 +77,13 @@ public class InsertRegisterDialog extends BottomSheetDialog {
 
         //Evento click de Registrar perfil
         view.BtnConfirmar.setOnClickListener(this::registrarPerfil);
+        editarPerfil();
+    }
+
+    private void editarPerfil(){
+        if(profile != null){
+            view.txtTitulo.setText("EDITAR PERFIL");
+        }
     }
 
     private void registrarPerfil(View view1){
@@ -116,14 +114,20 @@ public class InsertRegisterDialog extends BottomSheetDialog {
         String Departamento =optionRepository.departmentsList.get(indexDepartment).getValor();
         String Municipio = optionRepository.municipiosList.get(indexMunicipio).getValor();
 
-        Profile profile = new Profile(NombreUsuario, calcularAp, Tarifa, Departamento, Municipio);
-        mProfileViewModel.insert(profile);
-        Alertar.successSave((Activity) ctx, "Guardando","Guardando su perfil");
+        profile = new Profile(NombreUsuario, calcularAp, Tarifa, Departamento, Municipio);
+        PrefManager prefManager = PrefManager.getInstance(ctx);
+        prefManager.setProfileExist(true);
+        prefManager.setDepartment(view.txtDepartamento.getText().toString());
+        prefManager.setMunicipio(view.txtMunicipio.getText().toString());
         dismiss();
     }
 
-    public void setmProfileViewModel(ProfileViewModel mProfileViewModel) {
-        this.mProfileViewModel = mProfileViewModel;
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    public Profile getProfile() {
+        return profile;
     }
 
     public void setOptionRepository(OptionRepository optionRepository) {

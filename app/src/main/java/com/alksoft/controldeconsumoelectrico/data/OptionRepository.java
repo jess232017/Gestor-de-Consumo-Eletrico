@@ -65,7 +65,7 @@ public class OptionRepository {
 
             @Override
             public void onFailure(@NotNull Call<OpcionResponse> call, @NotNull Throwable t) {
-                Alertar.error((Activity) ctx, "Error", "No se pudieron obtener las tarifas");
+                Alertar.error((Activity) ctx, "Error", "No se pudieron obtener las tarifas: " + t.getMessage());
             }
         });
     }
@@ -95,7 +95,7 @@ public class OptionRepository {
 
             @Override
             public void onFailure(@NotNull Call<OpcionResponse> call, @NotNull Throwable t) {
-                Alertar.error((Activity) ctx, "Error", "No se pudieron obtener los departamentos");
+                Alertar.error((Activity) ctx, "Error", "No se pudieron obtener los departamentos: " + t.getMessage());
 
             }
         });
@@ -132,7 +132,7 @@ public class OptionRepository {
             @Override
             public void onFailure(@NotNull Call<OpcionResponse> call, @NotNull Throwable t) {
                 indicator.setVisibility(View.GONE);
-                Alertar.error((Activity) ctx, "Error", "No se pudieron obtener los municipios");
+                Alertar.error((Activity) ctx, "Error", "No se pudieron obtener los municipios: " + t.getMessage());
             }
         });
     }

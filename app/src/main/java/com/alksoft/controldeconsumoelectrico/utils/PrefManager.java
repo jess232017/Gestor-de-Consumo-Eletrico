@@ -9,6 +9,9 @@ public class PrefManager {
     ///Llaves
     public static final String SHARED_PREFS = "shared_prefs";
     public static final String PROFILE_EXIST = "profile_exist";
+    public static final String DEPARTMENT = "department";
+    public static final String MUNICIPIO = "municipio";
+
 
     ///
     private static PrefManager sInstance;
@@ -32,6 +35,26 @@ public class PrefManager {
     public void setProfileExist(Boolean profileExist){
         final SharedPreferences.Editor editor = mPref.edit();
         editor.putBoolean(PROFILE_EXIST, profileExist);
+        editor.apply();
+    }
+
+    public final String getDepartment() {
+        return mPref.getString(DEPARTMENT, "");
+    }
+
+    public final String getMunicipio() {
+        return mPref.getString(MUNICIPIO, "");
+    }
+
+    public void setDepartment(String department){
+        final SharedPreferences.Editor editor = mPref.edit();
+        editor.putString(DEPARTMENT, department);
+        editor.apply();
+    }
+
+    public void setMunicipio(String municipio){
+        final SharedPreferences.Editor editor = mPref.edit();
+        editor.putString(MUNICIPIO, municipio);
         editor.apply();
     }
 }

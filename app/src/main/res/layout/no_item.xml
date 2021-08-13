@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_light_background">
+    android:background="@color/contentBodyColor">
 
     <ImageView
         android:id="@+id/bg_image"
@@ -24,15 +24,17 @@
         android:orientation="vertical">
 
         <TextView
+            android:fontFamily="@font/products_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
             android:text="No hay recibos"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:textColor="@color/ColorPrimaryVariantText"
+            android:textColor="@color/contentTextColor"
             android:textStyle="bold" />
 
         <TextView
+            android:fontFamily="@font/products_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
@@ -42,14 +44,15 @@
             android:textColor="@color/ColorSecondaryText" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/products_regular"
             android:id="@+id/BtnAccion"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15.0dip"
             android:background="@drawable/btn_corner5"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/contentTextColor"
             android:text="@string/registrar_button"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/contentBodyColor" />
     </LinearLayout>
 </RelativeLayout>
 

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@android:color/white"
+    android:background="@color/contentBodyColor"
     android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -24,6 +24,7 @@
             android:backgroundTint="@color/light200" />
 
         <TextView
+            android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -31,7 +32,7 @@
             android:fontFamily="sans-serif-condensed"
             android:padding="4.0dip"
             android:text="REGISTRAR PERFIL"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/contentTextColor"
             android:textSize="18.0sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -57,7 +58,7 @@
                 android:layout_marginBottom="@dimen/spacing_medium"
                 android:text="@string/nombre"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                android:textColor="@color/ColorPrimaryVariantText" />
+                android:textColor="@color/contentTextColor" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -89,7 +90,7 @@
                         android:layout_marginBottom="@dimen/spacing_medium"
                         android:text="@string/tarifa"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/ColorPrimaryVariantText" />
+                        android:textColor="@color/contentTextColor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -121,7 +122,7 @@
                         android:layout_marginBottom="@dimen/spacing_medium"
                         android:text="@string/alumbrado_publico"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/ColorPrimaryVariantText" />
+                        android:textColor="@color/contentTextColor" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/switchAP"
@@ -151,7 +152,7 @@
                         android:layout_marginBottom="@dimen/spacing_medium"
                         android:text="@string/departamento"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/ColorPrimaryVariantText" />
+                        android:textColor="@color/contentTextColor" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -183,7 +184,7 @@
                         android:layout_marginBottom="@dimen/spacing_medium"
                         android:text="@string/municipio"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/ColorPrimaryVariantText" />
+                        android:textColor="@color/contentTextColor" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -227,9 +228,9 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_corner5"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@color/contentTextColor"
                 android:text="@string/registrar_profile"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/contentBodyColor" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

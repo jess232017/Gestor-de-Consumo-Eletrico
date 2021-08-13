@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grayback"
+    android:background="@color/very_light_gray"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,6 +13,19 @@
         <include
             android:id="@+id/AppBar"
             layout="@layout/toolbar" />
+
+        <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+            android:id="@+id/main_single_row_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:deselection="false"
+            app:longPress="false"
+            app:multiSelection="false" />
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -27,7 +40,24 @@
             android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
+            <com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:primaryColor="@color/colorPrimary"
+                app:textColor="@android:color/white"
+                app:selectedItem_textColor="@color/colorPrimary"
+                app:todayItem_textColor="@android:color/white"
+                app:todayItem_background="@drawable/circle_white_stroke_background"
+                app:selectedItem_background="@drawable/circle_white_solid_background"
+                app:buttonLeft_drawableTintColor="@android:color/white"
+                app:buttonRight_drawableTintColor="@android:color/white"
+                app:expandIconColor="@android:color/white">
+            </com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar>
+
             <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="@dimen/spacing_middle"
                 android:id="@+id/listInvoice"
                 android:scrollbars="vertical"
                 android:layout_width="match_parent"

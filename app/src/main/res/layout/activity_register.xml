@@ -13,9 +13,9 @@
         <ImageView
             android:layout_width="77dp"
             android:layout_height="77dp"
-            android:layout_marginTop="93dp"
+            android:layout_marginTop="73dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_launcher_foreground"
+            android:src="@drawable/logo"
             android:contentDescription="@string/todo" />
     </FrameLayout>
 
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="62dp"
                 android:layout_marginRight="62dp"
-                android:layout_marginTop="36.7dp"
+                android:layout_marginTop="16.7dp"
                 app:startIconDrawable="@drawable/ic_baseline_person_24"
                 app:errorTextAppearance="@style/error_appearance"
                 app:startIconTint="@color/colorPrimary"
@@ -158,7 +158,8 @@
                 android:textColor="@android:color/white"
                 android:layout_marginLeft="62dp"
                 android:layout_marginRight="62dp"
-                android:layout_marginTop="12.7dp"/>
+                android:layout_marginTop="12.7dp"
+                android:layout_marginBottom="32.7dp"/>
 
         </LinearLayout>
 

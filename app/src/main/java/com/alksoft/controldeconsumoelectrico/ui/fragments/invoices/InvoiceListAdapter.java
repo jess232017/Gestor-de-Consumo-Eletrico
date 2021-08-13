@@ -5,9 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,19 +14,17 @@ import com.alksoft.controldeconsumoelectrico.data.local.entity.Calculado;
 import com.alksoft.controldeconsumoelectrico.data.local.entity.FacturaCalculada;
 import com.alksoft.controldeconsumoelectrico.data.local.entity.Invoice;
 import com.alksoft.controldeconsumoelectrico.databinding.ItemInvoicesBinding;
-import com.alksoft.controldeconsumoelectrico.databinding.SheetEditionBinding;
-import com.alksoft.controldeconsumoelectrico.databinding.SheetInvoicesBinding;
 import com.alksoft.controldeconsumoelectrico.ui.activities.detail.DetailActivity;
 import com.alksoft.controldeconsumoelectrico.ui.sheets.EditionSheet;
 import com.alksoft.controldeconsumoelectrico.ui.sheets.InvoiceSheet;
 import com.alksoft.controldeconsumoelectrico.utils.Alertar;
 import com.alksoft.controldeconsumoelectrico.vm.InvoiceViewModel;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+
+import dev.shreyaspatil.MaterialDialog.BottomSheetMaterialDialog;
 
 public class InvoiceListAdapter extends RecyclerView.Adapter<InvoiceListAdapter.InvoiceViewHolder > {
     private final Context mContext;
@@ -56,7 +52,7 @@ public class InvoiceListAdapter extends RecyclerView.Adapter<InvoiceListAdapter.
         float consumoFinal = invoice.getConsumoFinal();
         float totalkWh = (consumoFinal == 0 ) ? 0 : (invoice.getConsumoFinal() - invoice.getConsumoInicial());
 
-        holder.view.txtInvoiceNumber.setText("INV-000" + invoice.getIdFactura());
+       // holder.view.txtInvoiceNumber.setText("INV-000" + invoice.getIdFactura());
         holder.view.txtInitDate.setText(invoice.getFechaInicio());
         holder.view.txtEndDate.setText(invoice.getFechaFin());
         holder.view.txtApCz.setText(String.format("%.2f", ApCz));

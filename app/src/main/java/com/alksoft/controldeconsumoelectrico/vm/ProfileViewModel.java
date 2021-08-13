@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import com.alksoft.controldeconsumoelectrico.data.ProfileRepository;
 import com.alksoft.controldeconsumoelectrico.data.local.entity.Profile;
+import com.alksoft.controldeconsumoelectrico.utils.PrefManager;
 
 public class ProfileViewModel extends AndroidViewModel{
     private final ProfileRepository mRepository;

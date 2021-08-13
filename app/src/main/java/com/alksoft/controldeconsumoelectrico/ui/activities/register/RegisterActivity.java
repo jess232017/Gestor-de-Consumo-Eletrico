@@ -30,8 +30,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        prefManager = PrefManager.getInstance(this);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -59,17 +57,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Evento click de Registrar perfil
         view.BtnConfirmar.setOnClickListener(this::registrarPerfil);
+
+        prefManager = PrefManager.getInstance(this);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (PrefManager.getInstance(RegisterActivity.this).getProfileExist()) {
-            Intent i = new Intent(RegisterActivity.this, MainActivity.class);
-            startActivity(i);
-            finish();
-        }
-    }
+
 
     @SuppressLint("SetTextI18n")
     private void registrarPerfil(View view1){
@@ -112,8 +104,11 @@ public class RegisterActivity extends AppCompatActivity {
         Profile profile = new Profile(NombreUsuario, calcularAp, Tarifa, Departamento, Municipio);
         mProfileViewModel.insert(profile);
         prefManager.setProfileExist(true);
+        prefManager.setDepartment(view.txtDepartamento.getText().toString());
+        prefManager.setMunicipio(view.txtMunicipio.getText().toString());
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

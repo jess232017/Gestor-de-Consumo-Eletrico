@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/cardview_light_background"
+    android:background="@color/contentBodyColor"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="vertical">
@@ -20,7 +20,7 @@
             android:background="?selectableItemBackgroundBorderless"
             app:srcCompat="@drawable/ic_chevron_left"
             tools:ignore="ContentDescription"
-            app:tint="@color/ColorPrimaryVariantText" />
+            app:tint="@color/contentTextColor" />
 
         <TextView
             android:id="@+id/Title"
@@ -29,7 +29,7 @@
             android:layout_weight="1.0"
             android:gravity="center"
             android:text="@string/registrar_button"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small"
+            android:textSize="18sp"
             app:fontFamily="sans-serif-medium" />
 
         <ImageButton
@@ -39,7 +39,7 @@
             android:background="?selectableItemBackgroundBorderless"
             app:srcCompat="@drawable/ic_baseline_check_24"
             tools:ignore="ContentDescription"
-            app:tint="@color/ColorPrimaryVariantText" />
+            app:tint="@color/contentTextColor" />
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -68,7 +68,7 @@
                 android:layout_marginTop="36.7dp"
                 app:startIconDrawable="@drawable/ic_baseline_electrical_services_24"
                 app:errorTextAppearance="@style/error_appearance"
-                app:startIconTint="@color/colorPrimary"
+                app:startIconTint="@color/contentTextColor"
                 android:hint="@string/InitConsumo"
                 app:fontFamily="@font/poppins"
                 app:errorEnabled="true"
@@ -92,7 +92,7 @@
                 android:layout_marginTop="16.7dp"
                 app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
                 app:errorTextAppearance="@style/error_appearance"
-                app:startIconTint="@color/colorPrimary"
+                app:startIconTint="@color/contentTextColor"
                 android:hint="@string/FechaInicio"
                 app:fontFamily="@font/poppins"
                 android:id="@+id/lytFechaInicio"
@@ -114,9 +114,9 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_corner5"
-                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTint="@color/contentTextColor"
                 android:text="@string/registrar_button"
-                android:textColor="@android:color/white"
+                android:textColor="@color/contentBodyColor"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="16.7dp"/>

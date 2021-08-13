@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.alksoft.controldeconsumoelectrico.R;
 import com.alksoft.controldeconsumoelectrico.databinding.FragmentReportsBinding;
 import com.alksoft.controldeconsumoelectrico.utils.JvUtils;
 import com.alksoft.controldeconsumoelectrico.vm.ProfileViewModel;
@@ -46,13 +49,17 @@ public class ReportsFragment extends Fragment {
             }
         });
 
-        BarData data = setDataInBarData();
+        //Barra de estado transparente
+        makeTransperantStatusBar(true);
+
+       /* BarData data = setDataInBarData();
         binding.chart1.setData(data);
         binding.chart1.animateXY(2000, 2000);
-        binding.chart1.invalidate();
+        binding.chart1.invalidate();*/
 
         binding.chart2.getDescription().setEnabled(false);
-        binding.chart2.setBackgroundColor(Color.WHITE);
+        binding.chart2.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.contentBodyColor));
+        binding.chart2.getXAxis().setTextColor(ContextCompat.getColor(requireContext(), R.color.contentTextColor));
         binding.chart2.setDrawGridBackground(false);
         binding.chart2.setDrawBarShadow(false);
         binding.chart2.setHighlightFullBarEnabled(false);
@@ -79,7 +86,9 @@ public class ReportsFragment extends Fragment {
         LineData lineData = generateLineData();
 
         binding.chart3.getDescription().setEnabled(false);
-        binding.chart3.setBackgroundColor(Color.WHITE);
+        binding.chart3.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.contentBodyColor));
+        binding.chart3.getXAxis().setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+
         binding.chart3.setDrawGridBackground(false);
 
         binding.chart3.setData(lineData);
@@ -102,6 +111,7 @@ public class ReportsFragment extends Fragment {
         set.setLineWidth(2.5f);
 
         //54,93,195
+        set.setValueTextColor(ContextCompat.getColor(requireContext(), R.color.contentTextColor));
         set.setCircleColor(Color.rgb(54, 93, 195));
         set.setCircleRadius(5f);
         set.setFillColor(Color.rgb(54, 93, 195));
@@ -134,6 +144,7 @@ public class ReportsFragment extends Fragment {
         entries.add(new BarEntry(11, 141, "JN"));
 
         BarDataSet d = new BarDataSet(entries, "Consumo según mes");
+        d.setValueTextColor(ContextCompat.getColor(requireContext(), R.color.contentTextColor));
         d.setColors(ColorTemplate.VORDIPLOM_COLORS);
         d.setHighLightAlpha(255);
 
@@ -142,9 +153,18 @@ public class ReportsFragment extends Fragment {
         return cd;
     }
 
+    private void makeTransperantStatusBar(boolean isTransperant) {
+        if (isTransperant) {
+            requireActivity().getWindow().setStatusBarColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark));
+        } else {
+            requireActivity().getWindow().setStatusBarColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark));
+        }
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+        vmProfile = null;
     }
 }
